@@ -56,11 +56,30 @@ class MainActivity : ComponentActivity() {
         setContent {
             AffirmationsTheme {
                 // A surface container using the 'background' color from the theme
-
-                AffirmationsApp()
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    AffirmationsApp()
+                }
 
             }
         }
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun AffirmationsAppPreview() {
+    AffirmationsTheme {
+        // A surface container using the 'background' color from the theme
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            AffirmationsApp()
+        }
+
     }
 }
 
